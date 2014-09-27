@@ -36,30 +36,7 @@ under the License.
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-
-        <repository>
-            <id>com.google.code.sbtrun-maven-plugin</id>
-            <name>SBT Runner Maven Plugin - releases</name>
-            <url>http://sbtrun-maven-plugin.googlecode.com/svn/mavenrepo/releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
     </repositories>
-
-    <!--<pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,7 +47,7 @@ under the License.
 
         <play2.plugin.version>1.0.0-alpha8</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta4</sbt-compiler.plugin.version>
-        <sbtrun.plugin.version>1.0.0-alpha1</sbtrun.plugin.version>
+        <sbtrun.plugin.version>1.0.0-beta1</sbtrun.plugin.version>
     </properties>
 
     <dependencies>
@@ -112,12 +89,6 @@ under the License.
         <resources>
             <resource>
                 <directory>${basedir}/conf</directory>
-            </resource>
-            <resource>
-                <directory>${basedir}</directory>
-                <includes>
-                    <include>public/**</include>
-                </includes>
             </resource>
         </resources>
         <!--<outputDirectory>target/scala-2.10/classes</outputDirectory>-->
