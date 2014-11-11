@@ -42,12 +42,12 @@ under the License.
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.3.3</play2.version>
+        <play2.version>2.3.6</play2.version>
         <scala.version>2.10.4</scala.version>
 
-        <play2.plugin.version>1.0.0-alpha8</play2.plugin.version>
-        <sbt-compiler.plugin.version>1.0.0-beta4</sbt-compiler.plugin.version>
-        <sbtrun.plugin.version>1.0.0-beta1</sbtrun.plugin.version>
+        <play2.plugin.version>1.0.0-alpha9-SNAPSHOT</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
+        <sbtrun.plugin.version>1.0.0-beta2-SNAPSHOT</sbtrun.plugin.version>
     </properties>
 
     <dependencies>
@@ -91,7 +91,6 @@ under the License.
                 <directory>${basedir}/conf</directory>
             </resource>
         </resources>
-        <!--<outputDirectory>target/scala-2.10/classes</outputDirectory>-->
 
         <plugins>
             <plugin>
@@ -154,50 +153,96 @@ under the License.
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <id>default-jar</id>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                                </manifest>
-                            </archive>
-                            <excludes>
-                                <exclude>public/**</exclude>
-                            </excludes>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>assets-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>assets</classifier>
-                            <includes>
-                                <include>public/**</include>
-                            </includes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.17</version>
+                <version>2.18</version>
                 <configuration>
                     <includes>
                         <include>**/*Spec.java</include>
                     </includes>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>eclipse</id> <!-- for M2Eclipse integration only -->
+
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!-- build-helper-maven-plugin configuration not required for m2e version 1.5 or later -->
+                        <plugin>
+                            <groupId>org.eclipse.m2e</groupId>
+                            <artifactId>lifecycle-mapping</artifactId>
+                            <version>1.0.0</version>
+                            <configuration>
+                                <lifecycleMappingMetadata>
+                                    <pluginExecutions>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>org.codehaus.mojo</groupId>
+                                                <artifactId>build-helper-maven-plugin</artifactId>
+                                                <versionRange>[1.0,)</versionRange>
+                                                <goals>
+                                                    <goal>add-resource</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <execute>
+                                                    <runOnConfiguration>true</runOnConfiguration>
+                                                    <runOnIncremental>false</runOnIncremental>
+                                                </execute>
+                                            </action>
+                                        </pluginExecution>
+                                    </pluginExecutions>
+                                </lifecycleMappingMetadata>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.2</version>
+                        <configuration>
+                            <excludes>
+                                <exclude>assets/**</exclude>
+                                <exclude>views/**</exclude>
+                            </excludes>
+                            <skipMain>true</skipMain>
+                            <skip>true</skip>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>default-compile</id>
+                                <goals><goal>compile</goal></goals>
+                            </execution>
+                            <execution>
+                                <id>default-testCompile</id>
+                                <goals><goal>testCompile</goal></goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
