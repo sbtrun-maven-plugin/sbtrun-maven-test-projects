@@ -28,9 +28,10 @@ under the License.
     <name>SBT Runner Maven Test Projects</name>
 
     <scm>
-        <connection>scm:svn:http://sbtrun-maven-plugin.googlecode.com/svn/trunk/test-projects/</connection>
-        <developerConnection>scm:svn:https://sbtrun-maven-plugin.googlecode.com/svn/trunk/test-projects/</developerConnection>
-        <url>http://sbtrun-maven-plugin.googlecode.com/svn/trunk/test-projects/</url>
+        <connection>scm:git:git://github.com/sbtrun-maven-plugin/sbtrun-maven-test-projects.git</connection>
+        <developerConnection>scm:git:git@github.com:sbtrun-maven-plugin/sbtrun-maven-test-projects.git</developerConnection>
+        <url>https://github.com/sbtrun-maven-plugin/sbtrun-maven-test-projects/tree/${project.scm.tag}</url>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
