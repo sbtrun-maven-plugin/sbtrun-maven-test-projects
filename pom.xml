@@ -37,7 +37,7 @@ under the License.
     <properties>
         <play2.plugin.version>1.0.0-alpha9</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta5</sbt-compiler.plugin.version>
-        <sbtrun.plugin.version>1.0.0-beta2</sbtrun.plugin.version>
+        <sbtrun.plugin.version>1.0.0-beta3-SNAPSHOT</sbtrun.plugin.version>
     </properties>
 
     <modules>
