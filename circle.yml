@@ -3,3 +3,11 @@ machine:
     _JAVA_OPTIONS: "-Xms512m -Xmx1024m"
   java:
     version: oraclejdk8
+
+dependencies:
+ override: 
+  - mvn dependency:resolve --settings circleci-settings.xml
+
+test:
+ override: 
+  - mvn verify --settings circleci-settings.xml
