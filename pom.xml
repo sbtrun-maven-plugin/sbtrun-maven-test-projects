@@ -35,8 +35,10 @@ under the License.
     </scm>
 
     <properties>
-        <play2.plugin.version>1.0.0-beta3</play2.plugin.version>
-        <sbt-compiler.plugin.version>1.0.0-beta6</sbt-compiler.plugin.version>
+        <release.plugin.version>2.5.3</release.plugin.version>
+
+        <play2.plugin.version>1.0.0-beta4</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0-beta7</sbt-compiler.plugin.version>
         <sbtrun.plugin.version>1.0.0-beta3-SNAPSHOT</sbtrun.plugin.version>
     </properties>
 
@@ -68,38 +70,10 @@ under the License.
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>${release.plugin.version}</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <providerImplementations>
-                            <svn>javasvn</svn>
-                        </providerImplementations>
                     </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.google.code.maven-scm-provider-svnjava</groupId>
-                            <artifactId>maven-scm-provider-svnjava</artifactId>
-                            <version>1.15</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.6</version>
-                    <configuration>
-                        <providerImplementations>
-                            <svn>javasvn</svn>
-                        </providerImplementations>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.google.code.maven-scm-provider-svnjava</groupId>
-                            <artifactId>maven-scm-provider-svnjava</artifactId>
-                            <version>1.15</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
