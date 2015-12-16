@@ -8,7 +8,8 @@ cache:
 install:
   - java -XX:+PrintFlagsFinal -version
   - mvn --version
-  - mvn dependency:resolve-plugins dependency:resolve --quiet --update-snapshots --settings .travis.settings.xml -e
+  - mvn dependency:resolve-plugins --update-snapshots --settings .travis.settings.xml -e
+  - mvn dependency:resolve --update-snapshots --settings .travis.settings.xml -e
 
 script: mvn clean verify --update-snapshots --settings .travis.settings.xml -e
 
