@@ -6,6 +6,7 @@ machine:
 
 dependencies:
  override: 
+  - mvn --version
   - mvn dependency:resolve --settings .travis.settings.xml -e
 
 test:

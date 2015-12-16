@@ -5,7 +5,9 @@ cache:
     - $HOME/.m2
     - $HOME/.zinc
 
-install: mvn dependency:resolve-plugins dependency:resolve --quiet --update-snapshots --settings .travis.settings.xml -e
+install:
+  - mvn --version
+  - mvn dependency:resolve-plugins dependency:resolve --quiet --update-snapshots --settings .travis.settings.xml -e
 
 script: mvn clean verify --update-snapshots --settings .travis.settings.xml -e
 
