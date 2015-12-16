@@ -10,8 +10,8 @@ dependencies:
     - mvn --version
     - mvn dependency:resolve --settings .travis.settings.xml -e
   cache_directories:
-    - $HOME/.m2
-    - $HOME/.zinc
+    - ~/.m2
+    - ~/.zinc
 
 test:
   override: 
