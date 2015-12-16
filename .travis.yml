@@ -6,6 +6,7 @@ cache:
     - $HOME/.zinc
 
 install:
+  - java -XX:+PrintFlagsFinal -version
   - mvn --version
   - mvn dependency:resolve-plugins dependency:resolve --quiet --update-snapshots --settings .travis.settings.xml -e
 
