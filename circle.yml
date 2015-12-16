@@ -8,7 +8,7 @@ dependencies:
   override:
     - java -XX:+PrintFlagsFinal -version
     - mvn --version
-    - mvn dependency:resolve --settings .travis.settings.xml -e
+    - mvn dependency:resolve-plugins dependency:resolve --settings .travis.settings.xml -e
   cache_directories:
     - ~/.m2
     - ~/.zinc

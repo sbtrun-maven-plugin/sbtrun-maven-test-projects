@@ -12,5 +12,4 @@ install:
 
 script: mvn clean verify --update-snapshots --settings .travis.settings.xml -e
 
-jdk:
-  - oraclejdk7
+jdk: oraclejdk7
