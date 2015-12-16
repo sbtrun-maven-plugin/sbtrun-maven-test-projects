@@ -1,15 +1,18 @@
 machine:
   environment:
-    _JAVA_OPTIONS: "-Xms512m -Xmx1024m"
+    _JAVA_OPTIONS: "-Xms512m -Xmx1024m -XX:PermSize=64m -XX:MaxPermSize=256m"
   java:
     version: oraclejdk7
 
 dependencies:
- override:
-  - java -XX:+PrintFlagsFinal -version
-  - mvn --version
-  - mvn dependency:resolve --settings .travis.settings.xml -e
+  override:
+    - java -XX:+PrintFlagsFinal -version
+    - mvn --version
+    - mvn dependency:resolve --settings .travis.settings.xml -e
+  cache_directories:
+    - $HOME/.m2
+    - $HOME/.zinc
 
 test:
- override: 
-  - mvn clean verify --settings .travis.settings.xml -e
+  override: 
+    - mvn clean verify --settings .travis.settings.xml -e
