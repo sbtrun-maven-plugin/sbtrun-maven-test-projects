@@ -22,7 +22,7 @@ under the License.
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.sbtrun-maven-plugin</groupId>
     <artifactId>test-projects</artifactId>
-    <version>1.0.0-beta5-SNAPSHOT</version>
+    <version>1.0.0-beta4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>SBT Runner Maven Test Projects</name>
