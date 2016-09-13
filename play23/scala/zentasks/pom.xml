@@ -127,8 +127,7 @@ under the License.
                         </goals>
                         <configuration>
                             <args>web-assets:assets</args>
-                            <!-- <jvmArgs>-Dscala.version=${scala.version}</jvmArgs> -->
-                            <jvmArgs>-Dscala.version=${scala.version} -Duser.home=D:/home/gs -Djava.io.tmpdir=D:/home/gs/Temp</jvmArgs>
+                            <jvmArgs>-Dscala.version=${scala.version}</jvmArgs>
                         </configuration>
                     </execution>
                 </executions>
