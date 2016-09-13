@@ -1,3 +1,5 @@
+logLevel := Level.Debug
+
 scalaVersion := Option(System.getProperty("scala.version")).getOrElse("2.11.8")
 
 lazy val main = (project in file("."))
