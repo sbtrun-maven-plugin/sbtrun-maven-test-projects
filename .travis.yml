@@ -9,6 +9,6 @@ install:
   - java -XX:+PrintFlagsFinal -version
   - mvn --version
 
-script: mvn verify --update-snapshots --settings .travis.settings.xml -e
+script: mvn verify --update-snapshots --settings .travis.settings.xml -X
 
 jdk: oraclejdk7
