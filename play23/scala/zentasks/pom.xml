@@ -43,15 +43,15 @@ under the License.
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <play2.version>2.3.10</play2.version>
-        <scala.version>2.11.8</scala.version>
+        <scala.version>2.11.11</scala.version>
 
         <build-helper.plugin.version>1.9</build-helper.plugin.version>
         <compiler.plugin.version>3.3</compiler.plugin.version>
         <jar.plugin.version>2.6</jar.plugin.version>
         <surefire.plugin.version>2.19</surefire.plugin.version>
 
-        <play2.plugin.version>1.0.0-beta5</play2.plugin.version>
-        <sbt-compiler.plugin.version>1.0.0-beta8</sbt-compiler.plugin.version>
+        <play2.plugin.version>1.0.0-beta7</play2.plugin.version>
+        <sbt-compiler.plugin.version>1.0.0</sbt-compiler.plugin.version>
         <sbtrun.plugin.version>1.0.0-SNAPSHOT</sbtrun.plugin.version>
     </properties>
 
