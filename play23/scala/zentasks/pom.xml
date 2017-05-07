@@ -22,7 +22,7 @@ under the License.
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.sbtrun-maven-plugin.test-projects.play23.scala</groupId>
     <artifactId>zentasks</artifactId>
-    <version>1.0.0-beta5-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>play2</packaging>
 
     <name>SBT Runner Maven Test Projects : Play! 2.3.x : Scala : Zentasks using SbtWeb Plugin</name>
@@ -52,7 +52,7 @@ under the License.
 
         <play2.plugin.version>1.0.0-beta5</play2.plugin.version>
         <sbt-compiler.plugin.version>1.0.0-beta8</sbt-compiler.plugin.version>
-        <sbtrun.plugin.version>1.0.0-beta4</sbtrun.plugin.version>
+        <sbtrun.plugin.version>1.0.0-SNAPSHOT</sbtrun.plugin.version>
     </properties>
 
     <dependencies>
